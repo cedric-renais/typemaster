@@ -1,0 +1,42 @@
+@use './functions' as f;
+@use './breakpoints' as b;
+
+@mixin button {
+  font-family: inherit;
+  font-size: f.rem(16);
+  font-weight: 700;
+  line-height: 1.625;
+  text-transform: uppercase;
+  padding-inline: f.rem(24);
+  padding-block: f.rem(16);
+  border-radius: f.rem(8);
+  border: none;
+  cursor: pointer;
+}
+
+@mixin button--gray {
+  @include button;
+  & {
+    background-color: var(--gray);
+    transition: var(--transition);
+    transition-property: background-color, color;
+  }
+
+  &:hover {
+    background-color: var(--blue-primary);
+    color: var(--white);
+  }
+}
+
+@mixin button--orange {
+  @include button;
+  & {
+    background-color: var(--orange-primary);
+    transition: var(--transition);
+    transition-property: background-color;
+  }
+
+  &:hover {
+    background-color: var(--orange-secondary);
+  }
+}

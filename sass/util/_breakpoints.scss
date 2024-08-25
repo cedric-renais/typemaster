@@ -1,0 +1,13 @@
+@use './functions' as u;
+
+// 700px, 1200px
+$breakpoints: (
+  tablet: u.em(700),
+  desktop: u.em(1200),
+);
+
+@mixin breakpoint($size) {
+  @media (width >= map-get($breakpoints, $size)) {
+    @content;
+  }
+}

@@ -1,0 +1,15 @@
+@use 'sass:math';
+
+@function rem($px) {
+  @if not $px {
+    @error 'Missing argument: `$px`.';
+  }
+  @return math.div($px, 16) + rem;
+}
+
+@function em($px) {
+  @if not $px {
+    @error 'Missing argument: `$px`.';
+  }
+  @return math.div($px, 16) + em;
+}

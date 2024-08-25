@@ -1,0 +1,96 @@
+@use './functions' as f;
+@use './breakpoints' as b;
+
+//////////////////
+// Grid wrapper //
+//////////////////
+@mixin grid-wrapper {
+  display: grid;
+
+  // Mobile
+  grid-template-columns:
+    f.rem(4) repeat(3, calc((100% - f.rem(24) - f.rem(8) * 2) / 3))
+    f.rem(4);
+  gap: f.rem(8);
+
+  // Tablet
+  @include b.breakpoint('tablet') {
+    grid-template-columns:
+      f.rem(4) repeat(6, calc((100% - f.rem(48) - f.rem(20) * 5) / 6))
+      f.rem(4);
+    gap: f.rem(20);
+  }
+
+  // Desktop
+  @include b.breakpoint('desktop') {
+    grid-template-columns:
+      1fr repeat(12, calc((f.rem(1100) - f.rem(20) * 11) / 12))
+      1fr;
+    gap: f.rem(20);
+  }
+}
+
+/////////////////
+// Padding Top //
+/////////////////
+@mixin padding-top {
+  // Mobile
+  & {
+    padding-block-start: var(--space-sm);
+  }
+
+  // Tablet
+  @include b.breakpoint('tablet') {
+    & {
+      padding-block-start: var(--space-md);
+    }
+  }
+
+  // Desktop
+  @include b.breakpoint('desktop') {
+    & {
+      padding-block-start: var(--space-lg);
+    }
+  }
+}
+
+////////////////////
+// Padding Bottom //
+////////////////////
+@mixin padding-bottom {
+  // Mobile
+  & {
+    padding-block-end: var(--space-sm);
+  }
+
+  // Tablet
+  @include b.breakpoint('tablet') {
+    & {
+      padding-block-end: var(--space-md);
+    }
+  }
+
+  // Desktop
+  @include b.breakpoint('desktop') {
+    & {
+      padding-block-end: var(--space-lg);
+    }
+  }
+}
+
+////////////////////
+// Padding Inline //
+////////////////////
+@mixin padding-inline {
+  // Mobile
+  & {
+    padding-inline: var(--space-xs);
+  }
+
+  // Tablet
+  @include b.breakpoint('tablet') {
+    & {
+      padding-inline: var(--space-sm);
+    }
+  }
+}

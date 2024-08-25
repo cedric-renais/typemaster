@@ -1,0 +1,32 @@
+@use '../util/' as u;
+
+:root {
+  // Colors
+  --orange-primary: hsl(22, 89%, 52%);
+  --orange-secondary: hsl(22, 100%, 69%);
+  --blue-primary: hsl(220, 49%, 17%);
+  --blue-secondary: hsl(221, 23%, 58%);
+  --gray: hsl(198, 28%, 85%);
+  --white: hsl(0, 0%, 95%);
+
+  // Fluid typography
+  --fluid-sm: #{clamp(
+      u.rem(16),
+      0.9545454545454546rem + 0.22727272727272727vw,
+      u.rem(18)
+    )};
+  --fluid-lg: #{clamp(
+      u.rem(48),
+      2.8181818181818183rem + 0.9090909090909091vw,
+      u.rem(56)
+    )};
+
+  // Spacing
+  --space-xs: #{u.rem(16)};
+  --space-sm: #{u.rem(24)};
+  --space-md: #{u.rem(48)};
+  --space-lg: #{u.rem(56)};
+
+  // Transition
+  --transition: 200ms ease-in-out;
+}
