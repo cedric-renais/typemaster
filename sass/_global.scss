@@ -5,12 +5,13 @@
 ///////////////////
 body {
   font-family: 'Barlow', Arial, Helvetica, sans-serif;
-  color: var(--blue-primary);
+  color: var(--blue-secondary);
 }
 
 h1,
 h2,
 h3 {
+  color: var(--blue-primary);
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -33,6 +34,10 @@ p {
   font-size: u.rem(16);
   font-size: var(--fluid-sm);
   line-height: 1.625;
+}
+
+a {
+  color: inherit;
 }
 
 section {
@@ -90,11 +95,12 @@ section {
   &__cta {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: var(--space-xs);
   }
 
   &__button {
-    @include u.button--orange;
+    @include u.button--blue;
   }
 
   &__info {
@@ -341,6 +347,7 @@ section {
     border-top-left-radius: u.rem(20);
     border-top-right-radius: u.rem(20);
     text-align: center;
-    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: u.rem(1);
   }
 }

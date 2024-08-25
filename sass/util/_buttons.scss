@@ -28,15 +28,17 @@
   }
 }
 
-@mixin button--orange {
+@mixin button--blue {
   @include button;
   & {
-    background-color: var(--orange-primary);
+    background-color: var(--blue-primary);
+    color: var(--white);
     transition: var(--transition);
-    transition-property: background-color;
+    transition-property: background-color, color;
   }
 
   &:hover {
-    background-color: var(--orange-secondary);
+    background-color: var(--gray);
+    color: var(--blue-primary);
   }
 }
